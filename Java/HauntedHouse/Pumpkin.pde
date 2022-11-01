@@ -5,6 +5,7 @@ public class Pumpkin {
   private boolean bounce = false;
   private int bounceHeight = 30;
   private int bounceSpeed = 0;
+  private int bounces = 0;
   private int gravity = 1;
   private int pumpkinColor;
   private int pumpkinSizePixels = 150;
@@ -29,6 +30,18 @@ public class Pumpkin {
     this.bounceHeight = newHeightInPixels;
   }
   
+  public int getY(){
+    return y;
+  }
+  
+  public int getBounceHeight(){
+    return bounceHeight;
+  }
+  
+  public int getBounces(){
+    return bounces;
+  }
+  
   public void bounce(){
     this.bounce = true;
   }
@@ -51,6 +64,10 @@ public class Pumpkin {
 
     if( bounceSpeed < bounceHeight ){
       bounceSpeed += gravity;
+    }
+    
+    if (y > bounceHeight){
+      bounces++;
     }
     
     y += bounceSpeed;

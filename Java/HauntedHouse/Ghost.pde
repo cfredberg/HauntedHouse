@@ -3,7 +3,7 @@ public class Ghost {
   private String direction;
   private int x;
   private int y;
-  private int speed = 5;
+  private float speed = 5;
   private int transparency = 125;
 
   public Ghost(int y, int speed, String direction) {
@@ -20,6 +20,26 @@ public class Ghost {
   public void setGhostTransparency( int transparency ){
     // Normalize value from 0-255
     this.transparency = ( 255 - ( ( transparency * 255 ) / 100 ) );
+  }
+  
+  public int getX(){
+    return x;
+  }
+  
+  public int getY(){
+    return y;
+  }
+  
+  public float getSpeed(){
+    return speed;
+  }
+  
+  public void direction(String direction){
+    this.direction = direction;
+  }
+  
+  public void speed(float speed){
+    this.speed = speed;
   }
 
   void draw() {
